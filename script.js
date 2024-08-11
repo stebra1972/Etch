@@ -5,7 +5,6 @@ let celltot
 
 var { mouse, dots } = setMouseTrail();
 
-
 function setMouseTrail() {
     var dots = [], mouse = {
         x: 0,
@@ -24,7 +23,6 @@ function setMouseTrail() {
         } ());
     };
 
-
     Dot.prototype.draw = function () {
         this.node.style.left = this.x + "px";
         this.node.style.top = this.y + "px";
@@ -36,9 +34,8 @@ function setMouseTrail() {
         dots.push(d);
     }
 
+   addEventListener("mousemove", function (event) {
 
-    addEventListener("mousemove", function (event) {
-        //event.preventDefault();
         mouse.x = event.pageX;
         mouse.y = event.pageY;
     });
@@ -58,9 +55,7 @@ function promptMe() {
 
     renderCells()
 
-
 }
-
 
 function animate() {
     draw();
@@ -68,12 +63,8 @@ function animate() {
 }
 function draw() {
 
-    // Make sure the mouse position is set everytime
-    // draw() is called.
     var x = mouse.x,
         y = mouse.y;
-
-    // This loop is where all the 90s magic happens
 
     dots.forEach(function (dot, index, dots) {
         var nextDot = dots[index + 1] || dots[0];
@@ -113,6 +104,3 @@ function renderCells() {
         gridContainer.appendChild(cell);
     }
 }
-
-
-
