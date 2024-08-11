@@ -37,5 +37,5 @@ html,body {
     position: absolute;
     height: 6px; width: 6px;
     border-radius: 10px;
-    background: teal;
+    background: rgb(238, 36, 9);
   }
