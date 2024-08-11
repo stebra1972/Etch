@@ -4,9 +4,13 @@
 
 //button
 
+
+
 function promptMe(){
     var userAdjective = prompt("Quanti quadrati per lato nella nuova griglia ?");
     alert (userAdjective);
+
+
 
 
 
@@ -27,7 +31,7 @@ var Dot = function() {
  this.x = 0;
  this.y = 0;
  this.node = (function(){
-   var n = document.createElement("div");
+   var n = document.createElement("test");
    n.className = "trail";
    document.body.appendChild(n);
    return n;
@@ -91,16 +95,30 @@ function animate() {
 animate();
 
 
-// Add 16 divs
 
-const cdiv = document.querySelector('.container');
+let gridContainer = document.querySelector('.grid');
 
-// Add 16 divs
-for (let i = 1; i < 17; i++) {
-  const div = document.createElement('div');
-  cdiv.appendChild(div);
+let rowtot = (userAdjective);
+let celltot = rowtot * rowtot;
+
+gridContainer.style.display = 'div';
+gridContainer.style.gridTemplateRows = `repeat(${rowtot}, 1fr)`;
+gridContainer.style.gridTemplateColumns = `repeat(${rowtot}, 1fr)`;
+
+let row = 1;
+let column = 1;
+for (let i = 1; i <= celltot; i++) {
+  let cell = document.createElement('div');
+  cell.style.border = '1px solid black';
+  cell.style.gridRow = row;
+  cell.style.gridColumn = column;
+  cell.textContent = i;
+  column += 1;
+  if (column === rowtot + 1) {
+    row += 1;
+    column = 1;
+  }
+  gridContainer.appendChild(cell);
 }
-
-
 
 }
