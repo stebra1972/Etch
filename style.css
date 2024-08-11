@@ -1,5 +1,5 @@
 
-html, body {
+html,body {
    height: 100%;
    margin: 5px;
  }
@@ -32,4 +32,10 @@ html, body {
    justify-content: center;
    flex-direction: row;
  }
- 
+
+ .trail { /* className for the trail elements */
+    position: absolute;
+    height: 6px; width: 6px;
+    border-radius: 10px;
+    background: teal;
+  }
