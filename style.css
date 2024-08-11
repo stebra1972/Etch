@@ -3,6 +3,32 @@ html,body {
    height: 100%;
    margin: 5px;
  }
+
+
+ button {
+   padding: 1.2rem;
+   width: 100px;
+   border-radius: 30px;
+   background: rgb(241, 238, 5);
+   outline: none;
+   border-color: rgb(12, 20, 12);
+   border: 15px;
+   cursor: pointer;
+}
+
+
+.griglia {
+   padding: 1.2rem;
+   width: 200px;
+   border-radius: 30px;
+   background: rgb(111, 136, 216);
+   outline: none;
+   border-color: rgb(12, 20, 20);
+   border: 15px;
+   cursor: pointer;
+}
+
+
  .grid {
    border: 0px solid #000;
    background-color: #76dd46;
@@ -39,3 +65,8 @@ html,body {
     border-radius: 10px;
     background: rgb(238, 36, 9);
   }
+
+
+
+
+
