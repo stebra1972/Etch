@@ -45,10 +45,11 @@ function setMouseTrail() {
 }
 
 function promptMe() {
-    var domanda = prompt("Quanti quadrati per lato nella nuova griglia ?");
-    alert(domanda);
-    if (domanda>100 || domanda<1) {alert("Inserisci un valore tra 1 e 100"),promptMe()}
-    else {w=domanda}
+    var userImput = prompt("Quanti quadrati per lato nella nuova griglia ?");
+    alert(userImput);
+    if (userImput>100 || userImput<1) {
+        alert("Inserisci un valore tra 1 e 100"),promptMe()}
+    else {w=userImput}
     
 
     removeInitialGrid()
