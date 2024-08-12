@@ -11,28 +11,9 @@
 
 <body>
    
-    <button id="bgnBtn" onclick="promptMe()">Premi il pulsante</button>
-
-
-    <div class="grid">
-
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
+  <input type="number" id="sideLengthInput" placeholder="Numero di celle per lato ?" min="1" />
+  <button onclick="generateGrid()">Genera la griglia</button>
+  <div id="gridContainer"></div>
     
   <script src="script.js"></script>
 

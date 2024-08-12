@@ -1,11 +1,37 @@
+function promptMe() {
+    var sideLength = prompt("Quanti quadrati per lato nella nuova griglia ?");
+    
 
+    function generateGrid() {
+        const gridContainer = document.getElementById('gridContainer');
+        const sideLengthInput = document.getElementById('sideLengthInput');
+        const sideLength = parseInt(sideLengthInput.value);
+    
+        if (isNaN(sideLength) || sideLength <= 0) {
+            alert("Please enter a valid number greater than 0.");
+            return;
+        }
+    
+        // Clear the grid container
+        gridContainer.innerHTML = '';
+    
+        // Set grid template rows and columns based on the side length
+        gridContainer.style.gridTemplateRows = `repeat(${sideLength}, 1fr)`;
+        gridContainer.style.gridTemplateColumns = `repeat(${sideLength}, 1fr)`;
+    
+        // Calculate total number of cells
+        const totalCells = sideLength * sideLength;
+    
+        // Create the cells
+        for (let i = 1; i <= totalCells; i++) {
+            const cell = document.createElement('div');
+            cell.classList.add('grid-cell');
+            cell.textContent = i;
+            gridContainer.appendChild(cell);
+        }
+    }
+    
 
-
-let gridContainer = document.querySelector('.grid');
-let rowtot
-let celltot
-
-var { mouse, dots } = setMouseTrail();
 
 function setMouseTrail() {
     var dots = [], mouse = {
@@ -22,7 +48,7 @@ function setMouseTrail() {
             n.className = "trail";
             document.body.appendChild(n);
             return n;
-        } ());
+        }());
     };
 
     Dot.prototype.draw = function () {
@@ -36,7 +62,7 @@ function setMouseTrail() {
         dots.push(d);
     }
 
-   addEventListener("mousemove", function (event) {
+    addEventListener("mousemove", function (event) {
 
         mouse.x = event.pageX;
         mouse.y = event.pageY;
@@ -44,30 +70,7 @@ function setMouseTrail() {
     return { mouse, dots };
 }
 
-function promptMe() {
-    var userImput = prompt("Quanti quadrati per lato nella nuova griglia ?");
-    alert(userImput);
-    if (userImput>100 || userImput<1) {
-        alert("Inserisci un valore tra 1 e 100"),promptMe()}
-    else {w=userImput}
-    
 
-    removeInitialGrid()
-    animate();
-
-   
-
-    rowtot = (w);
-    celltot = rowtot * rowtot;
-
-
-  
-    setGridContainerStyle()
-    renderCells()
-
-    
-
-}
 
 function animate() {
     draw();
@@ -89,39 +92,6 @@ function draw() {
 
     });
 }
-
-
-
-function   removeInitialGrid(){
-
-    if (userAdjective = "")
-    console.log ("prova")   
-    { gridContainer.innerHTML=""}}
-
-
-function setGridContainerStyle() {
-
-    gridContainer.style.display = 'div';
-    gridContainer.style.gridTemplateRows = `repeat(${rowtot}, 1fr)`;
-    gridContainer.style.gridTemplateColumns = `repeat(${rowtot}, 1fr)`;
 }
 
-function renderCells() {
 
-    let row = 1;
-    let column = 1;
-
-    for (let i = 1; i <= celltot; i++) {
-        let cell = document.createElement('div');
-        cell.style.border = '1px solid black';
-        cell.style.gridRow = row;
-        cell.style.gridColumn = column;
-        cell.textContent = i;
-        column += 1;
-        if (column === rowtot + 1) {
-            row += 1;
-            column = 1;
-        }
-        gridContainer.appendChild(cell);
-    }
-    }
