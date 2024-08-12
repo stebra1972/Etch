@@ -2,6 +2,7 @@
 html,body {
    height: 100%;
    margin: 5px;
+   background-color: red;
  }
 
 
@@ -29,9 +30,10 @@ html,body {
   #gridContainer {
     display: grid;
     gap: 2px;
-    width: 400px;
-    height: 400px;
-    border: 1px solid black;
+    width: 1300px;
+    height: 500px;
+    border: 1px solid black
+    
 }
 
 .grid-cell {

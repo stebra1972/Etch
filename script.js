@@ -1,27 +1,26 @@
-function promptMe() {
-    var sideLength = prompt("Quanti quadrati per lato nella nuova griglia ?");
-    
+
+
 
     function generateGrid() {
         const gridContainer = document.getElementById('gridContainer');
         const sideLengthInput = document.getElementById('sideLengthInput');
         const sideLength = parseInt(sideLengthInput.value);
-    
+
         if (isNaN(sideLength) || sideLength <= 0) {
             alert("Please enter a valid number greater than 0.");
             return;
         }
-    
+
         // Clear the grid container
         gridContainer.innerHTML = '';
-    
+
         // Set grid template rows and columns based on the side length
         gridContainer.style.gridTemplateRows = `repeat(${sideLength}, 1fr)`;
         gridContainer.style.gridTemplateColumns = `repeat(${sideLength}, 1fr)`;
-    
+
         // Calculate total number of cells
         const totalCells = sideLength * sideLength;
-    
+
         // Create the cells
         for (let i = 1; i <= totalCells; i++) {
             const cell = document.createElement('div');
@@ -30,7 +29,7 @@ function promptMe() {
             gridContainer.appendChild(cell);
         }
     }
-    
+
 
 
 function setMouseTrail() {
@@ -92,6 +91,6 @@ function draw() {
 
     });
 }
-}
+
 
 
