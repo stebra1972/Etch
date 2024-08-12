@@ -1,4 +1,6 @@
 
+
+
 let gridContainer = document.querySelector('.grid');
 let rowtot
 let celltot
@@ -43,19 +45,22 @@ function setMouseTrail() {
 }
 
 function promptMe() {
-    var userAdjective = prompt("Quanti quadrati per lato nella nuova griglia ?");
-    alert(userAdjective);
+    var domanda = prompt("Quanti quadrati per lato nella nuova griglia ?");
+    alert(domanda);
+    if (domanda>100 || domanda<1) {alert("Inserisci un valore tra 1 e 100"),promptMe()}
+    else {w=domanda}
+    
 
-
+    removeInitialGrid()
     animate();
 
    
 
-    rowtot = (userAdjective);
+    rowtot = (w);
     celltot = rowtot * rowtot;
 
 
-    removeInitialGrid()
+  
     setGridContainerStyle()
     renderCells()
 
@@ -84,10 +89,12 @@ function draw() {
     });
 }
 
+
+
 function   removeInitialGrid(){
 
     if (userAdjective = "")
-    console.log()   
+    console.log ("prova")   
     { gridContainer.innerHTML=""}}
 
 
@@ -116,9 +123,4 @@ function renderCells() {
         }
         gridContainer.appendChild(cell);
     }
-
-
     }
-
-
-
