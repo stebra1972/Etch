@@ -46,14 +46,20 @@ function promptMe() {
     var userAdjective = prompt("Quanti quadrati per lato nella nuova griglia ?");
     alert(userAdjective);
 
+
     animate();
+
+   
 
     rowtot = (userAdjective);
     celltot = rowtot * rowtot;
 
-    setGridContainerStyle()
 
+    removeInitialGrid()
+    setGridContainerStyle()
     renderCells()
+
+    
 
 }
 
@@ -77,6 +83,13 @@ function draw() {
 
     });
 }
+
+function   removeInitialGrid(){
+
+    if (userAdjective = "")
+    console.log()   
+    { gridContainer.innerHTML=""}}
+
 
 function setGridContainerStyle() {
 
@@ -103,4 +116,9 @@ function renderCells() {
         }
         gridContainer.appendChild(cell);
     }
-}
+
+
+    }
+
+
+
