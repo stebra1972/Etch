@@ -1,22 +1,23 @@
 
 
+function generateGrid() {
+    const gridContainer = document.getElementById('gridContainer');
+    const sideLengthInput = document.getElementById('sideLengthInput');
+    const sideLength = parseInt(sideLengthInput.value);
 
-    function generateGrid() {
-        const gridContainer = document.getElementById('gridContainer');
-        const sideLengthInput = document.getElementById('sideLengthInput');
-        const sideLength = parseInt(sideLengthInput.value);
-
-        if (isNaN(sideLength) || sideLength <= 0) {
-            alert("Per favore inserisci un numero superiore  a 0");
-            return;
-        }
-
-       
+    if (isNaN(sideLength) || sideLength <= 0) {
+        alert("Please enter a valid number greater than 0.");
+        return;
+    }
+    
+    
+    
+ 
         gridContainer.innerHTML = '';
 
      
-        gridContainer.style.gridTemplateRows = `repeat(${sideLength}, 1fr)`;
-        gridContainer.style.gridTemplateColumns = `repeat(${sideLength}, 1fr)`;
+    gridContainer.style.gridTemplateRows = `repeat(${sideLength}, 1fr)`;
+    gridContainer.style.gridTemplateColumns = `repeat(${sideLength}, 1fr)`;
 
         
         const totalCells = sideLength * sideLength;
@@ -29,9 +30,11 @@
             gridContainer.appendChild(cell);
         }
 
-        animate();
+      
 
+        animate();
     }
+
 
 
 
@@ -94,5 +97,6 @@ function animate() {
  draw();
  requestAnimationFrame(animate);
 }
+
 
 
