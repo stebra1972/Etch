@@ -1,9 +1,23 @@
 
 
+
+
+
+
+
+
+
+function promptMe() {
+    let sideLength = prompt("Quanti quadrati per lato nella nuova griglia ?");
+  
+
+
+
+
 function generateGrid() {
     const gridContainer = document.getElementById('gridContainer');
-    const sideLengthInput = document.getElementById('sideLengthInput');
-    const sideLength = parseInt(sideLengthInput.value);
+    
+    
 
     if (isNaN(sideLength) || sideLength <= 0) {
         alert("Please enter a valid number greater than 0.");
@@ -11,7 +25,7 @@ function generateGrid() {
     }
     
     
-    
+  }
  
         gridContainer.innerHTML = '';
 
@@ -30,8 +44,7 @@ function generateGrid() {
             gridContainer.appendChild(cell);
         }
 
-      
-
+    
         animate();
     }
 
