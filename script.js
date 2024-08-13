@@ -2,15 +2,13 @@
 function promptMe() {
   let sideLength = prompt("Quanti quadrati per lato nella nuova griglia ?");
 
+  if (isNaN(sideLength) || sideLength <= 0 || sideLength > 100) {
+    alert("Per favore inserisci un numero superiore tra 1 e 100, grazie !");
+    return;
 
-  function generateGrid() {
-    const gridContainer = document.getElementById('gridContainer');
+    function generateGrid() {
+      const gridContainer = document.getElementById('gridContainer');
 
-
-
-    if (isNaN(sideLength) || sideLength <= 0) {
-      alert("Please enter a valid number greater than 0.");
-      return;
     }
 
   }
@@ -31,7 +29,6 @@ function promptMe() {
     cell.textContent = i;
     gridContainer.appendChild(cell);
   }
-
 
   animate();
 }
