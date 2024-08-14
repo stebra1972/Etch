@@ -4,8 +4,9 @@ document.addEventListener("DOMContentLoaded", function() {
   const gridContainer = document.getElementById('gridContainer');
   
   // Create a 16x16 grid (256 cells)
-  for (let i = 0; i < 256; i++) {
+  for (let i = 1; i < 257; i++) {
       const cell = document.createElement('div');
+      cell.textContent = i;
       cell.classList.add('grid-cell');
       gridContainer.appendChild(cell);
   }
