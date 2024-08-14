@@ -1,19 +1,18 @@
 
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   const gridContainer = document.getElementById('gridContainer');
-  
+
   // Create a 16x16 grid (256 cells)
   for (let i = 1; i < 257; i++) {
-      const cell = document.createElement('div');
-      cell.textContent = i;
-      cell.classList.add('grid-cell');
-      gridContainer.appendChild(cell);
+    const cell = document.createElement('div');
+    cell.textContent = i;
+    cell.classList.add('grid-cell');
+    gridContainer.appendChild(cell);
   }
 });
 
- 
-  function promptMe() {
+function promptMe() {
 
   let sideLength = prompt("Quanti quadrati per lato nella nuova griglia ?");
 
@@ -28,14 +27,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
   }
 
-    gridContainer.innerHTML = '';
+  gridContainer.innerHTML = '';
 
 
-    gridContainer.style.gridTemplateRows = `repeat(${sideLength}, 1fr)`;
-    gridContainer.style.gridTemplateColumns = `repeat(${sideLength}, 1fr)`;
+  gridContainer.style.gridTemplateRows = `repeat(${sideLength}, 1fr)`;
+  gridContainer.style.gridTemplateColumns = `repeat(${sideLength}, 1fr)`;
 
 
-    const totalCells = sideLength * sideLength;
+  const totalCells = sideLength * sideLength;
 
 
   for (let i = 1; i <= totalCells; i++) {
@@ -46,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
 
-  
+
   animate();
 }
 
