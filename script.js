@@ -1,5 +1,19 @@
 
-function promptMe() {
+
+document.addEventListener("DOMContentLoaded", function() {
+  const gridContainer = document.getElementById('gridContainer');
+  
+  // Create a 16x16 grid (256 cells)
+  for (let i = 0; i < 256; i++) {
+      const cell = document.createElement('div');
+      cell.classList.add('grid-cell');
+      gridContainer.appendChild(cell);
+  }
+});
+
+ 
+  function promptMe() {
+
   let sideLength = prompt("Quanti quadrati per lato nella nuova griglia ?");
 
   if (isNaN(sideLength) || sideLength <= 0 || sideLength > 100) {
@@ -13,14 +27,14 @@ function promptMe() {
 
   }
 
-  gridContainer.innerHTML = '';
+    gridContainer.innerHTML = '';
 
 
-  gridContainer.style.gridTemplateRows = `repeat(${sideLength}, 1fr)`;
-  gridContainer.style.gridTemplateColumns = `repeat(${sideLength}, 1fr)`;
+    gridContainer.style.gridTemplateRows = `repeat(${sideLength}, 1fr)`;
+    gridContainer.style.gridTemplateColumns = `repeat(${sideLength}, 1fr)`;
 
 
-  const totalCells = sideLength * sideLength;
+    const totalCells = sideLength * sideLength;
 
 
   for (let i = 1; i <= totalCells; i++) {
@@ -30,8 +44,11 @@ function promptMe() {
     gridContainer.appendChild(cell);
   }
 
+
+  
   animate();
 }
+
 
 
 var dots = [],

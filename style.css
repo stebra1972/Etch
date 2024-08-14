@@ -33,8 +33,11 @@ html,body {
     width: 1300px;
     height: 500px;
     border: 1px solid black
+    grid-template-rows: repeat(16, 1fr);
+    grid-template-columns: repeat(16, 1fr);
     
 }
+
 
 .grid-cell {
     display: flex;
@@ -44,6 +47,8 @@ html,body {
     background-color: lightblue;
 
 }
+
+
 
 
 
