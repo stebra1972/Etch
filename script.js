@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function promptMe() {
 
+
   let sideLength = prompt("Quanti quadrati per lato nella nuova griglia ?");
 
   if (isNaN(sideLength) || sideLength <= 0 || sideLength > 100) {
