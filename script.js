@@ -30,7 +30,6 @@ function promptMe() {
 
   gridContainer.innerHTML = '';
 
-
   gridContainer.style.gridTemplateRows = `repeat(${sideLength}, 1fr)`;
   gridContainer.style.gridTemplateColumns = `repeat(${sideLength}, 1fr)`;
 
